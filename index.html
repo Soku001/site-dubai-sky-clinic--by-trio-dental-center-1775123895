@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Sky Clinic (by Trio Dental Center) - Premium Dental Care in Dubai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&family=Open+Sans:wght@400;600&display=swap');
+
+        :root {
+            --primary-blue: #0077b6;
+            --accent-white: #ffffff;
+            --background-light-blue: #e8f4fd;
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.2);
+            --border-light: #ddd;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--background-light-blue);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito Sans', sans-serif;
+            color: var(--primary-blue);
+            line-height: 1.2;
+            margin-bottom: 0.8em;
+        }
+
+        h1 { font-size: 2.8em; font-weight: 800; }
+        h2 { font-size: 2.2em; font-weight: 700; text-align: center; margin-bottom: 1.5em; }
+        h3 { font-size: 1.7em; font-weight: 700; }
+        h4 { font-size: 1.3em; font-weight: 600; }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #00568a; /* Slightly darker primary blue */
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--accent-white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: #00568a;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Header & Navigation */
+        .header {
+            background-color: var(--accent-white);
+            box-shadow: var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.8rem 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1.6em;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo .fa-tooth {
+            margin-right: 8px;
+            color: #ffcc00; /* Gold-like accent */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links li a {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1.05em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary-blue);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 119, 182, 0.7), rgba(0, 119, 182, 0.7)), url('https://source.unsplash.com/featured/1600x900/?dental,clinic,modern') center/cover no-repeat;
+            color: var(--accent-white);
+            text-align: center;
+            padding: 10rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: var(--accent-white);
+            font-size: 3.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 2em;
+            font-weight: 400;
+        }
+
+        .hero .google-rating {
+            font-size: 1.2em;
+            margin-top: 1em;
+            font-weight: 600;
+        }
+
+        .hero .google-rating i {
+            color: #FFD700; /* Gold */
+            margin-right: 5px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: var(--accent-white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .service-card i {
+            font-size: 3em;
+            color: var(--primary-blue);
+            margin-bottom: 0.8em;
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.6em;
+        }
+
+        .service-card p {
+            font-size: 0.95em;
+            flex-grow: 1; /* Allows paragraph to take available space */
+            margin-bottom: 1.5em;
+        }
+
+        .service-card .learn-more {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-top: auto; /* Push to bottom */
+            transition: color 0.3s ease;
+        }
+
+        .service-card .learn-more:hover {
+            color: #00568a;
+            text-decoration: underline;
+        }
+
+        /* About Section (Meet the Dentists) */
+        .about-section {
+            background-color: var(--accent-white);
+            padding: 6rem 0;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            object-fit: cover;
+            aspect-ratio: 3/2; /* Maintain aspect ratio */
+        }
+
+        .about-text {
+            flex: 2;
+            text-align: left;
+        }
+
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 0.8em;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background-color: var(--background-light-blue);
+        }
+
+        .google-rating-banner {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: var(--primary-blue);
+            color: var(--accent-white);
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .google-rating-banner h3 {
+            color: var(--accent-white);
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        .google-rating-banner .stars i {
+            color: #FFD700;
+            font-size: 1.8em;
+            margin: 0 2px;
+        }
+
+        .google-rating-banner p {
+            font-size: 1.1em;
+            margin-top: 0.5em;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--accent-white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .testimonial-card .stars {
+            color: #FFD700;
+            margin-bottom: 1em;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1em;
+            color: #555;
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* New Features Section */
+        .features-section {
+            background-color: var(--accent-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            background-color: var(--background-light-blue);
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .feature-item i {
+            font-size: 2.2em;
+            color: var(--primary-blue);
+            flex-shrink: 0;
+        }
+
+        .feature-item h4 {
+            margin-bottom: 0.4em;
+            color: var(--primary-blue);
+        }
+
+        .feature-item p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--background-light-blue);
+            text-align: center;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+            justify-content: center;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--accent-white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            text-align: left;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5em;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin-bottom: 1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+
+        .contact-info p i {
+            color: var(--primary-blue);
+            font-size: 1.3em;
+            width: 25px;
+            text-align: center;
+        }
+
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+            max-width: 600px;
+            background-color: var(--accent-white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            text-align: left;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 1.5em;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid var(--border-light);
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 3rem 0 1.5rem;
+            font-size: 0.95em;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1.5em;
+            color: var(--accent-white);
+            margin-bottom: 1em;
+        }
+
+        .footer-logo .fa-tooth {
+            color: #ffcc00;
+            margin-right: 8px;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-white);
+            margin-bottom: 1em;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.7em;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #d1e8f7; /* Lighter shade of text-light */
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.7em;
+        }
+
+        .footer-contact p i {
+            color: #ffcc00;
+            font-size: 1.1em;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 2rem;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366; /* WhatsApp green */
+            color: var(--accent-white);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2em;
+            line-height: 60px;
+            box-shadow: var(--shadow-medium);
+            z-index: 1000;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #1DA851; /* Darker green */
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Adjust based on header height */
+                left: 0;
+                width: 100%;
+                background-color: var(--accent-white);
+                box-shadow: var(--shadow-light);
+                padding: 1rem 0;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                text-align: center;
+                margin: 0.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.8em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text h2 {
+                text-align: center;
+            }
+
+            .contact-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info, .contact-form {
+                width: 90%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col ul {
+                padding: 0;
+            }
+            .footer-col ul li {
+                display: inline-block;
+                margin: 0 10px 10px 0;
+            }
+            .footer-contact p {
+                justify-content: center;
+            }
+
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.4em; }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 7rem 1rem;
+            }
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .service-card {
+                padding: 1.5rem;
+            }
+            .google-rating-banner h3 {
+                font-size: 1.5em;
+            }
+            .google-rating-banner .stars i {
+                font-size: 1.4em;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8em;
+                line-height: 50px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#hero" class="logo">
+                <i class="fas fa-tooth"></i> Dubai Sky Clinic
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Experience Unrivalled Dental Excellence in the Heart of Dubai.</h1>
+            <p>Dubai Sky Clinic (by Trio Dental Center) — Your Trusted Partner for a Healthy, Radiant Smile.</p>
+            <div class="google-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span>4.9/5 Google Rating</span>
+            </div>
+            <a href="#contact" class="btn">Book Your Appointment Today</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2>Our Comprehensive Dental Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>General Dentistry</h3>
+                    <p>Maintain optimal oral health with our comprehensive routine check-ups and preventative care.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-smile-beam"></i>
+                    <h3>Cosmetic Dentistry</h3>
+                    <p>Transform your smile into a work of art with our expert aesthetic treatments and personalized plans.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Teeth Whitening</h3>
+                    <p>Achieve a dazzlingly brighter smile safely and effectively with our professional teeth whitening solutions.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tooth"></i>
+                    <h3>Orthodontics</h3>
+                    <p>Correct misaligned teeth and bites for a perfectly straight, confident smile at any age.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-first-aid"></i>
+                    <h3>Emergency Dental</h3>
+                    <p>Receive immediate, compassionate care for unexpected dental pain or injuries when you need it most.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-implant"></i>
+                    <h3>Dental Implants</h3>
+                    <p>Restore missing teeth with durable, natural-looking dental implants for a complete and functional smile.</p>
+                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Dentists -->
+    <section id="about" class="about-section">
+        <div class="container about-content">
+            <div class="about-image">
+                <img src="https://source.unsplash.com/featured/900x600/?dentist,professional" alt="Our Expert Dentist">
+            </div>
+            <div class="about-text">
+                <h2>Meet Our Dedicated Team</h2>
+                <p>At Dubai Sky Clinic (by Trio Dental Center), our highly experienced and compassionate dentists are dedicated to providing personalized, state-of-the-art dental care.</p>
+                <p>We believe in creating a comfortable and reassuring environment where every patient feels understood and safe. Our team is committed to continuous learning, ensuring we offer the latest techniques and technologies across all our services, from General Dentistry to advanced Dental Implants.</p>
+                <p>Your oral health and radiant smile are our top priority, and we pride ourselves on building lasting relationships based on trust and exceptional results.</p>
+                <a href="#contact" class="btn">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Gallery -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2>Transformations You Can Trust</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/featured/600x400/?dental,treatment" alt="Dental Treatment Result">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/featured/600x400/?healthy,smile" alt="Healthy Smile after Treatment">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/featured/600x400/?cosmetic,dentistry" alt="Cosmetic Dentistry Before After">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/featured/600x400/?teeth,whitening,result" alt="Teeth Whitening Result">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <div class="google-rating-banner">
+                <h3>Our Patients Love Us!</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Proudly maintaining a <strong>4.9/5 Google Rating</strong> from hundreds of satisfied patients in Dubai.</p>
+            </div>
+
+            <h2>What Our Patients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"I came to Dubai Sky Clinic for a Dental Implants procedure, and I couldn't be happier with the results. The team at Burjuman Business Tower was incredibly professional and made me feel completely at ease throughout the entire process. Highly recommend their expertise!"</p>
+                    <div class="author">- Ahmed Al-Mansoori</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"My experience with Teeth Whitening at Trio Dental Center was fantastic. The clinic is beautifully clean, and the staff are so friendly. My smile has never looked better! It's truly a premium experience right here in Al Mankhool."</p>
+                    <div class="author">- Sarah Khan</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Had an Emergency Dental situation, and Dubai Sky Clinic responded promptly and provided excellent care. Dr. A. was very reassuring. Their Orthodontics advice for my son was also very clear and professional. A genuinely trustworthy clinic."</p>
+                    <div class="author">- Fatima Abdullah</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>Now Available: Enhanced Patient Convenience</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-comments"></i>
+                    <div>
+                        <h4>Live Chat</h4>
+                        <p>Get instant answers and support from our team, anytime, day or night.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <div>
+                        <h4>Online Booking</h4>
+                        <p>Schedule your appointments with ease at your convenience, directly from our website.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h4>AI Assistant</h4>
+                        <p>Have your common questions answered quickly and accurately by our intelligent virtual assistant.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <div>
+                        <h4>AI Voice Agent</h4>
+                        <p>Experience seamless communication; every call is answered promptly, ensuring you're always heard.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp Integration</h4>
+                        <p>Connect with us instantly and get rapid responses for all your queries via WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-star-half-alt"></i>
+                    <div>
+                        <h4>Live Google Reviews</h4>
+                        <p>See what our patients are saying, with real-time updates of our outstanding 4.9/5 Google rating.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch With Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-phone-alt"></i> +971 4 355 8808</p>
+                    <p><i class="fas fa-envelope"></i> trio.burjuman@triodentaluae.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Burjuman Business Tower - Unit 2109, Level 21 - Al Mankhool - Dubai - United Arab Emirates</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us an Enquiry</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Interested Service</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a Service</option>
+                                <option value="General Dentistry">General Dentistry</option>
+                                <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                                <option value="Teeth Whitening">Teeth Whitening</option>
+                                <option value="Orthodontics">Orthodontics</option>
+                                <option value="Emergency Dental">Emergency Dental</option>
+                                <option value="Dental Implants">Dental Implants</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-tooth"></i> Dubai Sky Clinic
+                    </div>
+                    <p>Premium dental care in the heart of Dubai, committed to your healthy and beautiful smile.</p>
+                    <p>Part of Trio Dental Center.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#about">Meet Our Dentists</a></li>
+                        <li><a href="#reviews">Patient Reviews</a></li>
+                        <li><a href="#features">New Features</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#services">General Dentistry</a></li>
+                        <li><a href="#services">Cosmetic Dentistry</a></li>
+                        <li><a href="#services">Teeth Whitening</a></li>
+                        <li><a href="#services">Orthodontics</a></li>
+                        <li><a href="#services">Emergency Dental</a></li>
+                        <li><a href="#services">Dental Implants</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone-alt"></i> +971 4 355 8808</p>
+                    <p><i class="fas fa-envelope"></i> trio.burjuman@triodentaluae.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Burjuman Business Tower - Unit 2109, Level 21 - Al Mankhool - Dubai - UAE</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Dubai Sky Clinic (by Trio Dental Center). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/97143558808" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close mobile nav when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+
+            // Smooth scrolling for all internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const headerOffset = document.querySelector('.header').offsetHeight; // Height of sticky header
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
